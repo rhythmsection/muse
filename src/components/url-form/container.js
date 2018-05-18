@@ -16,7 +16,7 @@ class UrlFormContainer extends Component {
   }
 
   render() {
-    const {url} = this.props;
+    const { url } = this.props
 
     return (
       <div>

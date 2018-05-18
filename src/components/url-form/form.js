@@ -18,18 +18,18 @@ class UrlForm extends Component {
 
   onSubmitUrlClick = () => {
     const originalUrl = document.getElementById('originalUrl')
-    const optionalValue = document.getElementById('optionalValue')
+    const alias = document.getElementById('alias')
 
     // if optional value, do a check to see if it's in the DB if so,
     // submit error.
 
     this.props.submitUrlForm({
       originalUrl: originalUrl.value,
-      optionalValue: optionalValue.value
+      alias: alias.value
     })
 
     originalUrl.value = ""
-    optionalValue.value = ""
+    alias.value = ""
 
     originalUrl.focus()
   }
@@ -43,7 +43,7 @@ class UrlForm extends Component {
       <div className='url-form'>
         <h2>MAGICAL URL SHORTENER</h2>
         <input id="originalUrl" className='url-form-input' type="text" placeholder="Paste URL to Shorten" />
-        <input id="optionalValue" className='url-form-input' type="text" placeholder="Optional Alias After the Domain" />
+        <input id="alias" className='url-form-input' type="text" placeholder="Optional Alias After the Domain" />
         <button className='url-form-button' onClick={this.onSubmitUrlClick}>SHORTEN</button>
       </div>
     )

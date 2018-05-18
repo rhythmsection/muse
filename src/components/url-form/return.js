@@ -14,12 +14,12 @@ import PropTypes from 'prop-types'
 
 const UrlReturn = ({url}) => {
   const valid = true
-  // check for phishing :<
+  // check for phishing :< and uniqueness. non-uniqueness not saved, phishing saved.
 
   return valid
   ? (
     <div className='url-return'>
-       <label>SHORTENED URL: </label>
+       <label>SHORTENED URL: </label> {url.shortUrl}
        <label>HTML LINK: </label>
        <label>BBS LINK: </label>
     </div>
