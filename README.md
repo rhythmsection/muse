@@ -1,5 +1,3 @@
-## Welcome to [MUSE](https://url-muse.firebaseapp.com/)
-
 ## Table of Contents
 
 - [What's Happening Here?](#whats-up)
