@@ -21,7 +21,7 @@ const UrlReturn = ({url}) => {
   : url.suspect
     ? (
       <div className='url-return warning'>
-        The URL you submitted, <strong>{url.longUrl}</strong> is a known phishing website. Keep the web clean. Use MUSE for non-destructive purposes only. Thanks!
+        The URL you submitted, <strong>{url.longUrl}</strong> has pinged our phishing database and may be a malicious link. Keep the web clean. Use MUSE for non-destructive purposes only. Thanks!
       </div>
     )
     : null

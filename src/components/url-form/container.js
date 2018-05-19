@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 import * as actions from '../../actions';
 import UrlForm from './form';
 import UrlReturn from './return';
+import InfoTag from './info-tag';
 
 class UrlFormContainer extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class UrlFormContainer extends Component {
       <div>
         <UrlForm submitUrlForm={this.props.actions.submitUrlForm} />
         <UrlReturn url={url} />
+        <InfoTag />
       </div>
     )
   }

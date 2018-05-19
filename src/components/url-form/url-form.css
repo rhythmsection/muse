@@ -1,5 +1,5 @@
 .url-form {
-    font-family: 'Open Sans Condensed', arial, sans;
+    font-family: 'Open Sans', arial, sans;
     width: 500px;
     padding: 20px;
     background: #FFFFFF;
@@ -7,15 +7,26 @@
     border: 1px solid black;
 
 }
+.url-form h1 {
+    background: #4D4D4D;
+    font-family: 'Comfortaa', cursive;
+    color: #d3d3d3;
+    font-size: 96px;
+    font-weight: 100;
+    padding: 20px;
+    margin: -20px -20px -45px -20px;
+}
+
 .url-form h2 {
     background: #4D4D4D;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Comfortaa', cursive;
     color: #d3d3d3;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 100;
     padding: 20px;
     margin: -20px -20px 20px -20px;
 }
+
 .url-form input {
     outline: none;
     width: 95%;
@@ -29,10 +40,11 @@
 .url-form button {
     background-color: #2CBBBB;
     border: 1px solid #27A0A0;
+    border-radius: 10px;
     display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     padding: 12px 18px;
     margin-top: 10px;
@@ -42,12 +54,20 @@
 }
 
 .url-return {
-    font-family: 'Open Sans Condensed', arial, sans;
+    font-family: 'Open Sans', arial, sans;
     width: 500px;
     padding: 20px;
     background: #FFFFFF;
     margin: 20px auto;
     border: 1px solid black;
+}
+
+.info-tag {
+    font-family: 'Open Sans', arial, sans;
+    font-size: 10px;
+    color: #d3d3d3;
+    width: 500px;
+    margin: 0 auto;
 }
 
 .url-return label {
@@ -56,4 +76,22 @@
 
 .warning {
   color: salmon;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #d3d3d3;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #d3d3d3;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #d3d3d3;
+}
+
+.info-tag a {
+    color: #FFFFFF;
+    text-decoration: none;
 }

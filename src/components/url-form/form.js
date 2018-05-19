@@ -29,12 +29,12 @@ class UrlForm extends Component {
     })
 
     if (this.state.isValid && this.state.isUnique) {
+
       this.setState({isLoading: true})
       await this.props.submitUrlForm({
         longUrl: longUrl.value,
         alias: aliasValue
       })
-
       this.setState({isLoading: false})
 
       longUrl.value = ""
@@ -52,11 +52,12 @@ class UrlForm extends Component {
     return (
       <div>
         <div className='url-form'>
-          <h2>MAGICAL URL SHORTENING EXPERIENCE</h2>
+          <h1>MUSE</h1>
+          <h2>magical url shortening experience</h2>
           {!this.state.isValid ? <span className='warning'>URIs must start with <i>http(s)://</i></span> : null}
-          <input id="longUrl" className='url-form-input' type="text" placeholder="Paste URL to Shorten" />
+          <input id="longUrl" className='url-form-input' type="text" placeholder="url" />
           {!this.state.isUnique ? <span className='warning'>This alias is not available.</span> : null}
-          <input id="alias" className='url-form-input' type="text" placeholder="Custom Alias eg. domain.com/<alias>" />
+          <input id="alias" className='url-form-input' type="text" placeholder="custom alias eg. domain.com/<alias> (optional)" />
           <button className='url-form-button' onClick={this.onSubmitUrlClick}>SHORTEN</button>
         </div>
         { this.state.isLoading
