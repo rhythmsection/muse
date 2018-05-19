@@ -39,6 +39,8 @@ data with that future functionality in mind.
 
 ## Firebase and Deployment
 
+Since it's deployed, the easiest way to access a production copy is [here](https://url-muse.firebaseapp.com/).
+
 If you'd like to run a copy of this app yourself, you'll need a couple of things, mostly centered around Firebase.
 
 -**Clone the Project:** `git clone git@github.com:rhythmsection/muse.git`
