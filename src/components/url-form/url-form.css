@@ -3,7 +3,7 @@
     width: 500px;
     padding: 20px;
     background: #FFFFFF;
-    margin: 20px auto;
+    margin: 10px auto;
     border: 1px solid black;
 
 }
@@ -55,11 +55,37 @@
 
 .url-return {
     font-family: 'Open Sans', arial, sans;
+    color: #2CBBBB;
     width: 500px;
     padding: 20px;
     background: #FFFFFF;
-    margin: 20px auto;
+    margin: 5px auto;
     border: 1px solid black;
+}
+
+.copy-buttons {
+  padding-top: 10px;
+  margin: 0 auto;
+  display: flex;
+  flex: 1;
+}
+
+.copy-buttons button {
+    outline: none;
+    border: 1px solid #2CBBBB;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    color: #2CBBBB;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 10px 12px;
+    margin: 5px;
+    flex-grow: 1;
+}
+.url-return button:hover {
+    background-color:#2CBBBB;
+    color: #FFFFFF;
 }
 
 .info-tag {
@@ -72,6 +98,10 @@
 
 .url-return label {
   display: block;
+}
+
+.link-result {
+  font-size: 12px;
 }
 
 .warning {

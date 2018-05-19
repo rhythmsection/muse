@@ -7,15 +7,25 @@ BBS formatting as well as html formatting?
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const UrlReturn = ({url}) => {
   const shortUrl = `https://url-muse.firebaseapp.com/${url.alias}`
   return !url.suspect && url.alias
   ? (
     <div className='url-return'>
-       <span><label>SHORTENED URL: </label> <a href={url.longUrl}>{shortUrl}</a></span>
-       <label>HTML LINK: </label>
-       <label>BBS LINK: </label>
+      {shortUrl}
+      <div className='copy-buttons'>
+        <CopyToClipboard text={shortUrl}>
+          <button className='url-form-button'>Copy Shortened URL</button>
+        </CopyToClipboard>
+        <CopyToClipboard text={`<a href="${shortUrl}">${shortUrl}</a>`}>
+          <button className='url-form-button'>Copy HTML Link</button>
+        </CopyToClipboard>
+        <CopyToClipboard text={`[url="${shortUrl}"]${shortUrl}[/url]`}>
+          <button className='url-form-button'>Copy BBS Link</button>
+        </CopyToClipboard>
+      </div>
     </div>
   )
   : url.suspect
