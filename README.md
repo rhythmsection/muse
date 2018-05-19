@@ -23,10 +23,6 @@ After verification, you'll receive your new link as well as some handy formats t
 
 Enjoy!
 
-## Rationale
-
-Here's where I tell you why I chose to do what I did. I'll fill this in after I do a bit of testing. 
-
 ## Next Steps
 
 [CopyToClipboard](https://www.npmjs.com/package/react-copy-to-clipboard) is a neat react npm module, but a little clumsy.
@@ -45,6 +41,42 @@ data with that future functionality in mind.
 
 If you'd like to run a copy of this app yourself, you'll need a couple of things, mostly centered around Firebase.
 
+-**Clone the Project:** `git clone git@github.com:rhythmsection/muse.git`
+
+-**Firebase Account && Project:** Because I'm using Firebase, my server's included in the production environment. It's pretty
+neat that there's one source of truth for my database, whether I'm in development or production, but produces a scenario that's
+a little harder to reproduce. You can jump on [Firebase](https://firebase.google.com/) and get started with any Google account.
+  - After a quick project set-up, you'll be directed to a console where you'll be given the option to "Add Firebase to your web app". Clicking on that will enable a pop-up that will give you personal credentials. Per the format of this app, you'll want to store them as an exportable in an un-tracked file called `fire.js` in src. It'll look something like this:
+  ```
+  import firebase from 'firebase'
+
+  var config = {
+    <<YOUR CONFIG INFO>>
+  }
+
+  const fire = firebase.initializeApp(config)
+
+  export const auth = firebase.auth()
+
+  export default fire
+  ```
+  - The Firebase database doesn't need any further set-up, as there's no seeding to be done, and it sets up its collections automatically on initial submission.
+
+  - In your local directory that you've cloned into, you'll want to run `firebase login` followed by `firebase init`, choosing to set up *hosting*, the *database* and *cloud functions*.
+
+
+-**Phishtank API Registration:** Register for a [Phishtank](https://www.phishtank.com/api_info.php) account and store your `api_key` as an exportable in a file called `phish.js` in src. It'll simply be this:
+```
+export default <<YOUR API KEY>>
+```
+
+-**Install Dependencies:** `npm install`
+
+-**Run It:** `npm start`
+
+-**Test It:** `npm test`
+
+-**Deploy It:** `npm run build && firebase deploy`
 
 ## About Me
 
