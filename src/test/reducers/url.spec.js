@@ -8,7 +8,7 @@ describe('Reducers: URL', () => {
     longUrl: '',
     alias: '',
     suspect: false,
-    created_at: null
+    createdAt: null
   }
 
   const mockUrl = {
@@ -33,7 +33,7 @@ describe('Reducers: URL', () => {
       longUrl: 'aaa',
       alias: 'aaa',
       suspect: false,
-      created_at: null
+      createdAt: null
     }
 
     assert.deepEqual(

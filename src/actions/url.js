@@ -25,7 +25,7 @@ export const submitUrlForm = (urlData) => async (dispatch) => {
       const url = {
         longUrl: longUrl,
         alias,
-        created_at: moment().format('MMMM Do YYYY, h:mm:ss a'),
+        createdAt: moment().format('MMMM Do YYYY, h:mm:ss a'),
         suspect: body.results.in_database
       }
 

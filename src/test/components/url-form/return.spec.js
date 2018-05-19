@@ -17,7 +17,7 @@ describe('URL Return', () => {
       longUrl: 'http://www.itsgreat.com',
       alias: 'supergreat',
       suspect: false,
-      created_at: Date.now()
+      createdAt: Date.now()
     }
     const render = (props) => {
       const withNonSuspect = {
@@ -38,7 +38,7 @@ describe('URL Return', () => {
       longUrl: 'http://www.phishingscam.com',
       alias: 'notgreat',
       suspect: true,
-      created_at: Date.now()
+      createdAt: Date.now()
     }
     const render = (props) => {
       const withSuspect = {

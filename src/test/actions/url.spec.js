@@ -6,7 +6,7 @@ import { submitUrlForm } from '../../actions'
 const mockData = {
       longUrl: 'aaa',
       alias: 'aaa',
-      created_at: null,
+      createdAt: null,
       suspect: false
     }
 

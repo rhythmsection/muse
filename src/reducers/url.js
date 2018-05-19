@@ -1,7 +1,7 @@
 /*
 
 I do still store all phishing links. This is purposeful -- I think it's interesting data.
-They are tagged 'suspect: true'. 
+They are tagged 'suspect: true'.
 
 */
 
@@ -9,7 +9,7 @@ const initialState = {
   longUrl: '',
   alias: '',
   suspect: false,
-  created_at: null
+  createdAt: null
 }
 
 export default (state = initialState, action) => {
