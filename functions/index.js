@@ -1,13 +1,18 @@
-'use strict';
+/*
+  Here is the actual API call to phishtank. There were a couple of different URLs listed to use on
+  the developers' page, but I thought this way looked neater. This is also my 'server-side' code.
+  I chose firebase because the server-side code necessary was slim. 
+*/
 
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
-admin.initializeApp();
-const express = require('express');
-const app = express();
-const request = require('request-promise');
-const cors = require('cors')({origin: true});
+const functions = require('firebase-functions')
+const admin = require('firebase-admin')
+const express = require('express')
+const request = require('request-promise')
+const cors = require('cors')({origin: true})
 
+const app = express()
+
+admin.initializeApp()
 app.use(cors)
 
 app.post('/check-url', (req, res) => {

@@ -1,20 +1,17 @@
+/*
+  Here is where the POST request connecting to the phishtank API lives, as well as the submission of
+  a new URL to the database. Because this entire app is essentially 'client-side', the actual
+  express code lives as a cloud function in firebase. If you're looking for it in github,
+  you can find it in /functions/index.js
+
+*/
+
 import fire from '../fire'
 import moment from 'moment'
 import request from 'request'
 import phish from '../phish'
 
 export const submitUrlForm = (urlData) => async (dispatch) => {
-  /*
-
-  Hi morning kristen. here is what you have left to do:
-
-  3. Fix results div (copy keyboard maybe?)
-  4. Fix stylin'
-  5. tests man
-  6. documentation and cleaning yo
-
-  */
-
 return request.post({
   url: 'https://us-central1-url-muse.cloudfunctions.net/api/check-url',
   json: true,

@@ -1,10 +1,15 @@
+/*
+
+I do still store all phishing links. This is purposeful -- I think it's interesting data.
+They are tagged 'suspect: true'. 
+
+*/
+
 const initialState = {
   longUrl: '',
   alias: '',
-  valid: false,
   suspect: false,
-  created_at: null,
-  loaded: false
+  created_at: null
 }
 
 export default (state = initialState, action) => {
@@ -12,8 +17,7 @@ export default (state = initialState, action) => {
     case 'ADD_URL':
       return {
         ...state,
-        ...action.url,
-        loaded: true
+        ...action.url
       }
     default:
       return state

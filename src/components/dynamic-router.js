@@ -1,3 +1,9 @@
+/*
+
+The react-router style equivalent of redirecting in an HTTP call to original URL
+using matching on alias in my firebase database.
+
+*/
 import React from "react"
 import {
   BrowserRouter as Router,
@@ -12,7 +18,7 @@ const DynamicRouter = () => {
       <Route
         path='/:alias'
         component={({match}) => {
-          fire.database().ref('urls').orderByChild('alias').equalTo(match.params.alias).once("value", snap => {
+          fire.database().ref('urls').orderByChild('alias').equalTo(match.params.alias).once('value', snap => {
             const urlData = snap.val()
             if (urlData !== null) {
               for (let item in urlData) {

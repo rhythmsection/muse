@@ -1,19 +1,14 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as actions from '../../actions';
-import UrlForm from './form';
-import UrlReturn from './return';
-import InfoTag from './info-tag';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from '../../actions'
+import UrlForm from './form'
+import UrlReturn from './return'
+import InfoTag from './info-tag'
 
 class UrlFormContainer extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      url: {}
-    }
+  state = {
+    url: {}
   }
 
   render() {
@@ -26,11 +21,6 @@ class UrlFormContainer extends Component {
       </div>
     )
   }
-}
-
-UrlFormContainer.propTypes = {
-  url: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state, props) {

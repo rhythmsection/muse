@@ -1,13 +1,16 @@
 /*
 
-return value for URL (as a usable link) / copy pasteable?
-BBS formatting as well as html formatting?
+  CopyToClipboard is a cute react npm module, but a little clumsy. In a longer project, I would have loved
+  to build this implementation myself with more extensibility.
+
+  I also would like to add statistics for phishing links submitted. The database is prepped (stores this info),
+  and could make an interesting visualization on larger usage. (e.g. what links/domains get submitted most often?)
 
 */
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const UrlReturn = ({url}) => {
   const shortUrl = `https://url-muse.firebaseapp.com/${url.alias}`
@@ -31,15 +34,12 @@ const UrlReturn = ({url}) => {
   : url.suspect
     ? (
       <div className='url-return warning'>
-        The URL you submitted, <strong>{url.longUrl}</strong> has pinged our phishing database and may be a malicious link. Keep the web clean. Use MUSE for non-destructive purposes only. Thanks!
+        The URL you submitted, <strong>{url.longUrl}</strong> has pinged our phishing database and may be a malicious link.
+        Keep the web clean. Use MUSE for non-destructive purposes only. Thanks!
       </div>
     )
     : null
 
-}
-
-UrlReturn.propTypes = {
-  url: PropTypes.object.isRequired
 }
 
 export default UrlReturn
