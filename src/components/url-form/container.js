@@ -7,15 +7,11 @@ import UrlReturn from './return'
 import InfoTag from './info-tag'
 
 class UrlFormContainer extends Component {
-  state = {
-    url: {}
-  }
-
   render() {
-    const { url } = this.props
+    const { url, actions: { submitUrlForm } } = this.props
     return (
       <div>
-        <UrlForm submitUrlForm={this.props.actions.submitUrlForm} />
+        <UrlForm submitUrlForm={submitUrlForm} />
         <UrlReturn url={url} />
         <InfoTag />
       </div>

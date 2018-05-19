@@ -13,8 +13,9 @@ import PropTypes from 'prop-types'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const UrlReturn = ({url}) => {
-  const shortUrl = `https://url-muse.firebaseapp.com/${url.alias}`
-  return !url.suspect && url.alias
+  const { alias, suspect, longUrl } = url
+  const shortUrl = `https://url-muse.firebaseapp.com/${alias}`
+  return !suspect && alias
   ? (
     <div className='url-return'>
       {shortUrl}
@@ -31,10 +32,10 @@ const UrlReturn = ({url}) => {
       </div>
     </div>
   )
-  : url.suspect
+  : suspect
     ? (
       <div className='url-return warning'>
-        The URL you submitted, <strong>{url.longUrl}</strong> has pinged our phishing database and may be a malicious link.
+        The URL you submitted, <strong>{longUrl}</strong> has pinged our phishing database and may be a malicious link.
         Keep the web clean. Use MUSE for non-destructive purposes only. Thanks!
       </div>
     )

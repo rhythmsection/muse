@@ -1,5 +1,5 @@
 .url-form {
-    font-family: 'Open Sans', arial, sans;
+    font-family: 'Open Sans', sans;
     width: 500px;
     padding: 20px;
     background: #FFFFFF;
@@ -33,28 +33,29 @@
     padding: 5px 10px;
     border: 1px solid #ddd;
     margin: 5px auto;
-    font: 16px Arial, Helvetica, sans-serif;
+    font: 16px Arial, Helvetica, sans;
     height: 35px;
 }
 
 .url-form button {
+    outline: none;
     background-color: #2CBBBB;
     border: 1px solid #27A0A0;
     border-radius: 10px;
     display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans;
     font-size: 16px;
     padding: 12px 18px;
     margin-top: 10px;
 }
 .url-form button:hover {
-    background-color:#34CACA;
+    background-color: #34CACA;
 }
 
 .url-return {
-    font-family: 'Open Sans', arial, sans;
+    font-family: 'Open Sans', sans;
     color: #2CBBBB;
     width: 500px;
     padding: 20px;
@@ -77,19 +78,19 @@
     display: inline-block;
     cursor: pointer;
     color: #2CBBBB;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans;
     font-size: 14px;
     padding: 10px 12px;
     margin: 5px;
     flex-grow: 1;
 }
 .url-return button:hover {
-    background-color:#2CBBBB;
+    background-color: #2CBBBB;
     color: #FFFFFF;
 }
 
 .info-tag {
-    font-family: 'Open Sans', arial, sans;
+    font-family: 'Open Sans', sans;
     font-size: 10px;
     color: #d3d3d3;
     width: 500px;

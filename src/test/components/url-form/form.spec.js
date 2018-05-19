@@ -10,10 +10,9 @@ import Adapter from 'enzyme-adapter-react-16'
 configure({ adapter: new Adapter() })
 
 describe('URL Form', () => {
-  const render = (props) => {
+  const render = () => {
     const withDefaults = {
-      submitUrlForm: () => {},
-      ...props
+      submitUrlForm: () => {}
     }
 
     return mount(<UrlForm {...withDefaults} />)

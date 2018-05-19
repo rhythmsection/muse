@@ -1,7 +1,7 @@
 /*
   Here is the actual API call to phishtank. There were a couple of different URLs listed to use on
   the developers' page, but I thought this way looked neater. This is also my 'server-side' code.
-  I chose firebase because the server-side code necessary was slim. 
+  I chose firebase because the server-side code necessary was slim.
 */
 
 const functions = require('firebase-functions')
@@ -16,8 +16,7 @@ admin.initializeApp()
 app.use(cors)
 
 app.post('/check-url', (req, res) => {
-  const url = req.body.url
-  const app_key = req.body.app_key
+  const { url, app_key } = req.body
   return request.post({
       url: 'https://checkurl.phishtank.com/checkurl/',
       json: true,

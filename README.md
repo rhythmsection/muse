@@ -65,7 +65,7 @@ a little harder to reproduce. You can jump on [Firebase](https://firebase.google
 
   - In your local directory that you've cloned into, you'll want to run `firebase login` followed by `firebase init`, choosing to set up *hosting*, the *database* and *cloud functions*.
 
-  - **IMPORTANT:** Because the **Phishtank API** exists as an outside of Google request, you *must* upgrade to a paid tier plan on Firebase to make it accessible. With the **Blaze** pricing plan, though, you only pay what you consume, so the cost should be very low unless this is run aggressively. Alternatively, you can *download and import a JSON file of server data from Phishtank* instead and change your connection to your Firebase database instead of the API. This is much slower, however.
+  - **IMPORTANT:** Because the **Phishtank API** exists outside the Google ecosystem, you *must* upgrade to a paid tier plan on Firebase to make it accessible via request. With the **Blaze** pricing plan, though, you only pay what you consume, so the cost should be very low unless this is run aggressively. Alternatively, you can *download and import a JSON file of server data from Phishtank* instead and change your connection to your Firebase database instead of the API. This is much slower, however.
 
 
 -**Phishtank API Registration:** Register for a [Phishtank](https://www.phishtank.com/api_info.php) account and store your `api_key` as an exportable in a file called `phish.js` in src. It'll simply be this:

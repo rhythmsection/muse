@@ -12,26 +12,28 @@ import request from 'request'
 import phish from '../phish'
 
 export const submitUrlForm = (urlData) => async (dispatch) => {
-return request.post({
-  url: 'https://us-central1-url-muse.cloudfunctions.net/api/check-url',
-  json: true,
-  form: {
-    url: urlData.longUrl,
-    app_key: phish
-  }},
-  function (error, response, body) {
-    const url = {
-      longUrl: urlData.longUrl,
-      alias: urlData.alias,
-      created_at: moment().format('MMMM Do YYYY, h:mm:ss a'),
-      suspect: body.results.in_database
-    }
+  const { longUrl, alias } = urlData
 
-    fire.database().ref('urls').push(url)
+  return request.post({
+    url: 'https://us-central1-url-muse.cloudfunctions.net/api/check-url',
+    json: true,
+    form: {
+      url: longUrl,
+      app_key: phish
+    }},
+    function (error, response, body) {
+      const url = {
+        longUrl: longUrl,
+        alias,
+        created_at: moment().format('MMMM Do YYYY, h:mm:ss a'),
+        suspect: body.results.in_database
+      }
 
-    return dispatch({
-      type: 'ADD_URL',
-      url
+      fire.database().ref('urls').push(url)
+
+      return dispatch({
+        type: 'ADD_URL',
+        url
+      })
     })
-  })
 }
