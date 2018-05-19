@@ -1,8 +1,10 @@
 const initialState = {
-  originalUrl: null,
-  alias: null,
+  longUrl: '',
+  alias: '',
   valid: false,
-  done: false
+  suspect: false,
+  created_at: null,
+  loaded: false
 }
 
 export default (state = initialState, action) => {
@@ -11,7 +13,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         ...action.url,
-        done: true
+        loaded: true
       }
     default:
       return state

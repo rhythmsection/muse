@@ -1,57 +1,76 @@
-/*
-
-Should include:
-mandatory submission for url
-optional submission for hash replacement
-submit button
-
-*/
-
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import './url-form.css';
+import shortid from 'shortid'
+import validUrl from 'valid-url'
+import { BeatLoader } from 'react-spinners'
+
+import './url-form.css'
+
+import fire from '../../fire'
 
 class UrlForm extends Component {
-  constructor(props) {
-    super(props)
+  state = {
+    isUnique: true,
+    isValid: true,
+    isLoading: false
   }
 
-  onSubmitUrlClick = () => {
-    const originalUrl = document.getElementById('originalUrl')
+  onSubmitUrlClick = async () => {
+    const longUrl = document.getElementById('longUrl')
     const alias = document.getElementById('alias')
+    const aliasValue = alias.value === "" ? shortid.generate() : alias.value
 
-    // if optional value, do a check to see if it's in the DB if so,
-    // submit error.
+    this.setState({ isValid: validUrl.isWebUri(longUrl.value) })
 
-    this.props.submitUrlForm({
-      originalUrl: originalUrl.value,
-      alias: alias.value
+    await fire.database().ref('urls').orderByChild('alias').equalTo(aliasValue).once("value", snap => {
+      const urlData = snap.val()
+      if (urlData !== null) {
+        this.setState({isUnique: false})
+      }
     })
 
-    originalUrl.value = ""
-    alias.value = ""
+    if (this.state.isValid && this.state.isUnique) {
+      this.setState({isLoading: true})
+      await this.props.submitUrlForm({
+        longUrl: longUrl.value,
+        alias: aliasValue
+      })
 
-    originalUrl.focus()
+      this.setState({isLoading: false})
+
+      longUrl.value = ""
+      alias.value = ""
+
+      longUrl.focus()
+    }
   }
 
   componentDidMount() {
-    document.getElementById('originalUrl').focus()
+    document.getElementById('longUrl').focus()
   }
 
   render() {
     return (
-      <div className='url-form'>
-        <h2>MAGICAL URL SHORTENER</h2>
-        <input id="originalUrl" className='url-form-input' type="text" placeholder="Paste URL to Shorten" />
-        <input id="alias" className='url-form-input' type="text" placeholder="Optional Alias After the Domain" />
-        <button className='url-form-button' onClick={this.onSubmitUrlClick}>SHORTEN</button>
+      <div>
+        <div className='url-form'>
+          <h2>MAGICAL URL SHORTENING EXPERIENCE</h2>
+          {!this.state.isValid ? <span className='warning'>URIs must start with <i>http(s)://</i></span> : null}
+          <input id="longUrl" className='url-form-input' type="text" placeholder="Paste URL to Shorten" />
+          {!this.state.isUnique ? <span className='warning'>This alias is not available.</span> : null}
+          <input id="alias" className='url-form-input' type="text" placeholder="Custom Alias eg. domain.com/<alias>" />
+          <button className='url-form-button' onClick={this.onSubmitUrlClick}>SHORTEN</button>
+        </div>
+        { this.state.isLoading
+          ? <div className='url-return'>
+              <BeatLoader
+                color={'#123abc'}
+                loading={this.state.isLoading}
+              />
+            </div>
+          : null
+        }
       </div>
     )
   }
-}
-
-UrlForm.propTypes = {
-  submitUrlForm: PropTypes.func.isRequired
 }
 
 export default UrlForm

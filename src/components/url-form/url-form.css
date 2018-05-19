@@ -3,7 +3,7 @@
     width: 500px;
     padding: 20px;
     background: #FFFFFF;
-    margin: 50px auto;
+    margin: 20px auto;
     border: 1px solid black;
 
 }
@@ -46,10 +46,14 @@
     width: 500px;
     padding: 20px;
     background: #FFFFFF;
-    margin: 50px auto;
+    margin: 20px auto;
     border: 1px solid black;
 }
 
 .url-return label {
   display: block;
+}
+
+.warning {
+  color: salmon;
 }

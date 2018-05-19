@@ -22,3 +22,4 @@ yarn-error.log*
 
 # keys
 /src/fire.js
+/src/phish.js

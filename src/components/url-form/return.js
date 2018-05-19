@@ -1,9 +1,5 @@
 /*
 
-Should include:
-
-A warning/safeguard message if it does not pass the phishing test, else
-
 return value for URL (as a usable link) / copy pasteable?
 BBS formatting as well as html formatting?
 
@@ -13,22 +9,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const UrlReturn = ({url}) => {
-  const valid = true
-  // check for phishing :< and uniqueness. non-uniqueness not saved, phishing saved.
-
-  return valid
+  const shortUrl = `https://url-muse.firebaseapp.com/${url.alias}`
+  return !url.suspect && url.alias
   ? (
     <div className='url-return'>
-       <label>SHORTENED URL: </label> {url.shortUrl}
+       <span><label>SHORTENED URL: </label> <a href={url.longUrl}>{shortUrl}</a></span>
        <label>HTML LINK: </label>
        <label>BBS LINK: </label>
     </div>
   )
-  : (
-    <div className='url-return'>
-      WARNING YO DONT GIVVE ME YOUR DUMB PHISHING SHIT
-    </div>
-  )
+  : url.suspect
+    ? (
+      <div className='url-return warning'>
+        The URL you submitted, <strong>{url.longUrl}</strong> is a known phishing website. Keep the web clean. Use MUSE for non-destructive purposes only. Thanks!
+      </div>
+    )
+    : null
+
 }
 
 UrlReturn.propTypes = {
