@@ -16,7 +16,7 @@ It uses a React/redux/node.js stack built on the Firebase database and cloud fun
 If you click [here](https://url-muse.firebaseapp.com/), it will take you to a Firebase hosted deployment
 of the app, where you can submit a url and receive a (...relatively) shortened link in return.
 
-The app also uses phishtank's API to check to see if the link you are trying to shorten is a common phishing
+The app also uses Phishtank's API to check to see if the link you are trying to shorten is a common phishing
 scam link, and won't let you use the service to do such terrible, terrible things (and won't forget that you tried).
 
 After verification, you'll receive your new link as well as some handy formats to copy straight to your clipboard.
@@ -64,6 +64,8 @@ a little harder to reproduce. You can jump on [Firebase](https://firebase.google
 
   - In your local directory that you've cloned into, you'll want to run `firebase login` followed by `firebase init`, choosing to set up *hosting*, the *database* and *cloud functions*.
 
+  - **IMPORTANT:** Because the **Phishtank API** exists as an outside of Google request, you *must* upgrade to a paid tier plan on Firebase to make it accessible. With the **Blaze** pricing plan, though, you only pay what you consume, so the cost should be very low unless this is run aggressively. Alternatively, you can *download and import a JSON file of server data from Phishtank* instead and change your connection to your Firebase database instead of the API. This is much slower, however.
+
 
 -**Phishtank API Registration:** Register for a [Phishtank](https://www.phishtank.com/api_info.php) account and store your `api_key` as an exportable in a file called `phish.js` in src. It'll simply be this:
 ```
@@ -72,7 +74,7 @@ export default <<YOUR API KEY>>
 
 -**Install Dependencies:** `npm install`
 
--**Run It:** `npm start`
+-**Run It Locally:** `npm start`
 
 -**Test It:** `npm test`
 
