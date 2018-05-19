@@ -59,10 +59,6 @@ class UrlForm extends Component {
     }
   }
 
-  componentDidMount() {
-    document.getElementById('longUrl').focus()
-  }
-
   render() {
     return (
       <div>

@@ -1,7 +1,6 @@
 ## Table of Contents
 
 - [What's Happening Here?](#whats-up)
-- [Rationale](#rationale)
 - [Next Steps](#next-steps)
 - [Firebase and Deployment](#firebase-and-deployment)
 - [About Me](#about-me)
