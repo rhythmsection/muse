@@ -1,4 +1,4 @@
-Welcome to MUSE, a little phishing-aware url-shortening app.
+## Welcome to [MUSE](https://url-muse.firebaseapp.com/)
 
 ## Table of Contents
 
@@ -12,7 +12,18 @@ Welcome to MUSE, a little phishing-aware url-shortening app.
 
 ## What's Happening Here?
 
+[MUSE](https://url-muse.firebaseapp.com/) is a small, phishing-aware, single-page url-shortening app.
+It uses a React/redux/node.js stack built on the Firebase database and cloud function hosting.
 
+If you click on [MUSE](https://url-muse.firebaseapp.com/), it will take you to a Firebase hosted deployment
+of the app, where you can submit a url and receive a (...relatively) shortened link in return.
+
+The app also uses phishtank's API to check to see if the link you are trying to shorten is a common phishing
+scam link, and won't let you use the service to do such terrible, terrible things.
+
+After verification, you'll receive your new link as well as some handy formats to copy straight to your clipboard.
+
+Enjoy!
 
 ## Rationale
 
@@ -24,6 +35,8 @@ Welcome to MUSE, a little phishing-aware url-shortening app.
 
 
 ## About Me
+
+I'm K. McClure and you can find out more about me [here](http://www.koorogi.com).
 
 
 ## Create React App
