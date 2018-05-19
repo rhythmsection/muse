@@ -61,6 +61,9 @@ a little harder to reproduce. You can jump on [Firebase](https://firebase.google
 
   export default fire
   ```
+
+  - You'll also want to make sure to change any of the links referencing my deployment to yours. They're usually tagged as `shortUrl`.
+
   - The Firebase database doesn't need any further set-up, as there's no seeding to be done, and it sets up its collections automatically on initial submission.
 
   - In your local directory that you've cloned into, you'll want to run `firebase login` followed by `firebase init`, choosing to set up *hosting*, the *database* and *cloud functions*.
