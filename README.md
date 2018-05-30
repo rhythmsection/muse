@@ -22,6 +22,13 @@ After verification, you'll receive your new link as well as some handy formats t
 
 Enjoy!
 
+---
+**NOTE**
+
+There is now a node back-end version of this project available [here](https://github.com/rhythmsection/url-shortener-express). But all the testing and other neat stuff is here ;) 
+
+---
+
 ## Next Steps
 
 [CopyToClipboard](https://www.npmjs.com/package/react-copy-to-clipboard) is a neat react npm module, but a little clumsy.
