@@ -93,7 +93,7 @@ export default <<YOUR API KEY>>
 
 ## About Me
 
-I'm K. McClure and you can find out more about me [here](http://www.koorogi.com).
+I'm K. McClure and you can find out more about me [here](http://www.kxmcclure.com).
 
 
 ## Create React App
