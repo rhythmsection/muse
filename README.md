@@ -25,7 +25,7 @@ Enjoy!
 ---
 **NOTE**
 
-There is now a node back-end version of this project available [here](https://github.com/rhythmsection/url-shortener-express). But all the testing and other neat stuff is here ;) 
+There is now a node back-end version of this project available [here](https://github.com/rhythmsection/muse-express). But all the testing and other neat stuff is here ;) 
 
 ---
 
